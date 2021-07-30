@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <style>
+            h1:first-of-type {
+                background-color: purple;
+                color: wheat;
+                width: 80%;
+            }
+        
+            #flex-flow {
+                display: flex;
+                flex-flow: row-reverse wrap;
+            }
+            
+            #flex-end {
+                display: flex;
+                justify-content: flex-end;
+            }
+            
+            #stretch {
+                display: flex;
+                align-content: stretch;
+                color: navy;
+            }
+            
+            #grid {
+                display: grid;
+                grid-template-columns: 100px 200px 200px;
+                grid-template-rows: 200px 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="flex-flow">
+            <h2>Hoge</h2>
+            <h2>Fuga</h2>
+            <h2>Foo</h2>
+            <h2>Bar</h2>
+        </div>
+        
+        <div id="flex-end">
+            <h1>Hoge</h1>
+            <h1>Fuga</h1>
+            <h1>Foo</h1>
+            <h1>Bar</h1>
+        </div>
+        
+        <div id="stretch">
+            <h1>Hoge</h1>
+            <h1>Fuga</h1>
+            <h1>Foo</h1>
+            <h1>Bar</h1>
+        </div>
+        
+        <div id="grid">
+            <h1>Hoge</h1>
+            <h1>Fuga</h1>
+            <h1>Foo</h1>
+            <h1>Bar</h1>
+            <h1>Fizz</h1>
+            <h1>Buzz</h1>
+        </div>
+    </body>
+</html>
+
+

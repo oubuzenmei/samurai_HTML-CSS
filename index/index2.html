@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScriptの練習・HTMLの表示</title>
+    <style>
+      #dialog {
+        width: 500px;
+        padding: 60px 40px;
+        text-align: center;
+        border: 1px solid #aaaaaa;
+        box-shadow: 2px 2px 4px #888;
+      }
+      .screenBlue {
+        height: 100vh;
+        color: #fff;
+        font-size: 5em;
+        text-align: center;
+        background-color: #88f;
+      }
+      .screenRed {
+        height: 100vh;
+        color: #fff;
+        font-size: 5em;
+        text-align: center;
+        background-color: #f88;
+      }
+      .pagetop {
+        display: none;
+        padding: 40px 10px;
+        background-color: #fff;
+        color: #000;
+        text-decoration: none;
+        border-radius: 50%;
+        
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  <!--  <form name="myForm">
+      <label>利用したことのあるOSを選択してください</label><br/>
+      <input type="checkbox" name="os" value="windows" />Windows
+      <input type="checkbox" name="os" value="macos" />Mac OS
+      <input type="checkbox" name="os" value="linux" />Linux
+      <input type="checkbox" name="os" value="ios" />iOS
+      <input type="checkbox" name="os" value="android" />Android
+    </form>
+    <button id="btn1">実行</button><br>
+    <br>
+    <form name="yourForm">
+      <label>名前：</label>
+      <input type="text" name="yourText"/><br>
+      <label>メールアドレス：</label>
+      <input type="email" name="yourEmail"/>
+      <br>
+      <label>年齢：</label>
+      <input type="radio" name="gap" value="20" />20代
+      <input type="radio" name="gap" value="30" />30代
+      <input type="radio" name="gap" value="40" />40代
+      <input type="radio" name="gap" value="50" />50代
+      <br>
+      <br>
+      <label>普段使っているスマホは？</label><br>
+      <input type="checkbox" name="smartphone" value="iPhone" />iPhone
+      <input type="checkbox" name="smartphone" value="Android" />Android
+      <input type="checkbox" name="smartphone" value="ガラケー" />ガラケー
+      <input type="checkbox" name="smartphone" value="その他" />その他
+    </form><br>
+    <button id="btn2">実行</button>
+    
+  //  chapter 10   
+    <textarea id="text" cols="50" rows="7"></textarea>
+    
+    <p id="count">0文字</p>
+    <h1 id="text2">こんにちは</h1>
+    
+    <form id="dialog" name="dialog">
+      <p>ボタンをクリックしてください</p>
+      <input type="button" name="yes" value="はい"/>
+      <input type="button" name="no" value="いいえ"/>
+      <input type="button" name="cancel" value="キャンセル"/>
+    </form>
+    <div class="screenBlue">ここがトップページです</div>
+    <div class="screenRed">2ページ目</div>
+    <div class="screenBlue">3ページ目</div>
+    <div class="screenRed">4ページ目</div>
+    <div class="screenBlue">5ページ目</div>
+    
+    <a class="pagetop" id="top" href="#">TOPに戻る</a>  -->
+    
+    <h1>JavaScript関連の最新記事 by Qiita</h1>
+    <button id="btn3">更新</button>
+    <ul id="list"></ul>
+    <script>
+  /*    const topLink = document.getElementById('top');
+      window.addEventListener('scroll', () => {
+        const scrollValue = document.scrollingElement.scrollTop;
+        
+        if(scrollValue >= 250) {
+          topLink.style.display = "inline";
+        } else if (scrollValue < 250) {
+          topLink.style.display = "none";
+        }
+      });
+    
+      const text = document.getElementById('text');
+      const count = document.getElementById('count');
+      text.addEventListener('keyup', () => {
+        const inputText = text.value.replace(/[\n\s]/g, "");
+        count.textContent = inputText.length + '文字';
+      });
+      
+      const btn2 = document.getElementById('btn2');
+      btn2.addEventListener('click', () => {
+        const form = document.forms.yourForm;
+        console.log(form.yourText.value);
+        console.log(form.yourEmail.value);
+        console.log(form.gap.value);
+        
+        form.smartphone.forEach(item => {
+          if(item.checked) console.log(item.value);
+        });
+      });
+    
+      const btn1 = document.getElementById('btn1');
+      btn1.addEventListener('click', () => {
+        const form = document.forms.myForm;
+        form.os.forEach(item => {
+          if(item.checked) console.log(item.value);
+        });
+      });      */
+      
+  /*    const h1 = document.getElementById('text2');
+      let countUp = 0; 
+      
+      const timer = setInterval( () => {
+        h1.style.fontSize = countUp + `px`;
+        countUp++;
+        if(countUp >= 70) clearInterval(timer);
+      }, 10);
+      
+      const form = document.forms.dialog;
+        form.yes.addEventListener('click', () => {
+          console.log('「はい」がクリックされました！');
+        });
+        form.no.addEventListener('click', () => {
+         console.log('「いいえ」がクリックされました！');
+        });
+        form.cancel.addEventListener('click', () => {
+          console.log('「キャンセル」がクリックされました！');
+        });
+                  */
+      
+  /*    const myName = 'Yoshi';
+      const myAge = 35;
+      console.log('私の名前は' + myName + 'で、年齢は' + myAge + 'です。');  
+      
+      const cart = ['Kindle Fire HD 10', 19980, 1];
+      console.log('商品名：' + cart[0]);
+      console.log('価格：' + cart[1] + '円');
+      console.log('個数：' + cart[2]);
+      
+      cart.push(100);
+      console.log(cart);
+      
+      const janken = ['グー', 'チョキ', 'パー'];
+      const rnd = Math.floor(Math.random() * janken.length);
+      console.log(janken[rnd]);
+      
+      const userID = ['user34', '', 'user18', '', 'user54', 'user48'];
+      const result = userID.filter(element => {
+        return element !== '';
+      })
+      console.log(result);         */
+      
+    /*  const user = ['田中太郎','佐藤一郎','山田次郎', '山田三郎', '伊藤花子'];
+      user.forEach(name => {
+        if(name === '山田三郎') {
+          console.log('山田三郎さんは存在します'); 
+        } 
+        name === '山田三郎' ? console.log('存在します') : false;
+      });
+      console.log('' ? true : false); 
+      
+      const luck = ['大吉', '中吉', '吉', '凶'];
+      const result = Math.floor(Math.random() * luck.length);
+      console.log(luck[result]);
+      
+      const user2 = ['田中太郎','佐藤一郎','山田次郎','伊藤三郎'];
+      user2.forEach(name => {
+        switch(name) {
+          case '田中太郎':
+            console.log(name + 'は営業部　第一課です');
+            break;
+          case '山田次郎':
+            console.log(name + 'は製造部　生産管理課です');
+            break;
+          default:
+            console.log(name + 'は該当データがありません');
+        }
+      });    */
+      
+     /* -------------4章課題--------------------------- */
+   /*  const weight = 65.5;
+     
+     if(weight <= 60) {
+       console.log('ダイエット成功です！');
+     } else if(weight <= 70) {
+       console.log('ついにここまで来ましたね');
+     } else if(weight <= 80) {
+       console.log('確実に成果が出ていますよ');
+     } else {
+       console.log('もっと頑張りましょう');
+     }
+     
+      if(weight >= 80) {
+          console.log('もっと頑張りましょう');
+      } else if(weight >= 70) {
+          console.log('確実に成果が出ていますよ');
+      } else if(weight > 60) {
+          console.log('ついにここまで来ましたね');
+      } else if(weight <= 60) {
+          console.log('ダイエット成功です！');
+      }
+     
+     const animal = '犬';
+     switch(animal) {
+       case '犬':
+         console.log('ワンワン！');
+         break;
+       case '猫':
+         console.log('sニャーン！');
+         break;
+       case '牛':
+         console.log('モー！');
+         break;
+       case 'ライオン':
+         console.log('ガオー！');
+         break;
+       case '烏':
+         console.log('カー！');
+         break;
+       default:
+         console.log('該当する動物はいません。');
+     }
+     
+     let state = true;
+     while(state) {
+       // 0〜9の乱数を生成する
+       let random = Math.floor(Math.random() * 10);
+       
+       // 数値が3になったら繰り返し処理を終了する
+       if(random === 3) state = false;
+       
+       console.log(random);
+     }                              */
+     
+     for (let i = 1; i < 10; i++ ) {
+       console.log(i);
+     }
+   //  5章-1
+     
+    
+  /*  let enemy = 10;
+    
+    while(true) {
+      let command = prompt('敵が現れた！（【1】攻撃　【2】逃げる）');
+      if(command === '1') {
+        let attack = Math.floor(Math.random() * 10);
+        console.log(attack + 'の攻撃！');
+        enemy = enemy - attack;
+            console.log('敵を倒した！');
+          if(enemy <= 0) {
+            break;
+          }
+        console.log('敵の体力は残り' + enemy + 'です'); 
+        
+      } else if(command === '2') {
+        console.log('無事に逃げました');
+        break;
+      }
+    }  
+    console.log('ゲーム終了');           */
+    
+    //  6章関数
+    // 関数宣言の場合
+  /*  function myFunc() {
+      console.log('これは関数宣言です。');
+    }
+    function myFunc() {
+    }
+    
+    myFunc();  関数の実行
+      console.log('これは二つ目の関数宣言です。');
+    
+  　関数式の場合
+    const myFunc2 = (keyword) => {
+      console.log('指定した文字は、「'+ keyword +'」ですね？');
+    };
+    myFunc2('プログラミング');
+    
+    const products = ['テレビ','冷蔵庫','机','スマホ','本棚','椅子','テーブル'];
+    
+    const search = (items, target) => {
+      const result = items.filter(item => item === target);
+      
+      if(result.length) {
+        return '商品が見つかりました！';
+      } else {
+        return 'お探しの商品は見つかりませんでした';
+      }
+    };
+    console.log(search(products, 'テーブル'));   */
+    
+  /*  const yourNumber = 40;
+    const getDouble = (number) => {
+      return number * 2;
+    }
+    console.log(getDouble(yourNumber));
+    
+    const doller = 108;
+   // const getYen = change => change * Dollar;
+    const getYen = (change) => {
+      return change * doller;
+    };
+    
+    while(true) {
+      const money = prompt('ドルから円へ換算します。');
+      if(money) {
+        console.log(getYen(money) + '円です');
+      } else break;
+    }                */
+    
+  /*  const user = {
+      name:'太郎',
+      age:30,
+      area:'東京都'
+    };
+    user.name = '山田太郎';
+    user.hobby = '読書'; //追加
+    delete user.age;　//削除
+    console.log(user); 
+    
+    const user = {
+      name:'太一',
+      age:30,
+      
+      getName: function() {
+        console.log(this.name);
+      }
+    };
+    user.getName();　　　　　　　　　*/
+    
+  /*  const object = {
+      getThis1: function() {
+        return this;
+      },
+      getThis2: () => this
+    };
+    console.log(object.getThis1());
+    console.log(object.getThis2());
+    
+    const contact_name = prompt('名前を入力して下さい');
+    const contact_tel = prompt('電話番号を入力して下さい');
+    
+    const contact = {};
+    
+    contact.name = contact_name;
+    contact.tel = contact_tel;  
+    
+    console.log(contact);   */
+  /* ---------------------------------------- */  
+  // クラス　
+  
+  /*  class Animal {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+    }
+    const dog = new Animal('犬', 8);
+    console.log(dog);
+    
+    class Cat extends Animal {
+      constructor(name, age, type) {
+        super(name, age);
+        this.type = type;
+      }
+      speak() {
+        console.log(this.name + 'が「にゃーん」と鳴きました！');
+      }
+    }
+    const cat = new Cat('アッシュ', 5, 'スコティッシュホールド');
+    cat.speak();
+    console.log(cat);          
+  // -------------------------------  
+    class Character {
+      constructor(name1 ,hp) {
+        this.name1 = name1;
+        this.hp = hp;
+      }
+      attack() {
+        console.log(this.name1 + 'の攻撃！');
+      }
+    }
+    
+    class Hero extends Character {
+      constructor(name1, hp, exp) {
+        super(name1, hp);
+        this.exp = exp;
+      }
+      control() {
+        
+      }
+      superAttack() {
+        
+      }
+      speak() {
+        
+      }
+    }
+    class Enemy extends Character {
+      dropItem() {
+        
+      }
+      getPoint() {
+        
+      }
+    }
+    const hero = new Hero('主人公', 100, 10);
+    const enemy = new Enemy('敵', 10, 5);
+    hero.attack();
+    enemy.attack();
+    console.log(hero);     */
+    //  ---------------------------------
+    
+  /*  const promise = new Promise(resolve => {
+      setTimeout( () => {
+        resolve('処理が完了');
+      }, 20000);
+    });
+    // then()を使って完了通知を受け取る
+    // 引数resultには渡された文字列が格納されている
+    promise.then(result => console.log(result));       
+    
+    // 1つ目のPromise処理
+    const promise1 = () => {
+      return new Promise(resolve => {
+        setTimeout( () => {
+          resolve('一つ目の処理が完了');
+        }, 10000);
+      });
+    };
+    // 2つ目のPromise処理
+    const promise2 = () => {
+      return new Promise(resolve => {
+        setTimeout( () => {
+          resolve('二つ目の処理が完了');
+        }, 10000);
+      });
+    };
+    const promise3 = () => {
+    // 3つ目のPromise処理
+      return new Promise(resolve => {
+        setTimeout( () => {
+          resolve('三つ目の処理が完了');
+        }, 10000);
+      });
+    };
+    promise1()
+    // 1つ目の非同期処理
+    .then(data => {
+      console.log(data);
+      return promise2(); // 次に実行する非同期処理を指定
+    })
+    // 2つ目の非同期処理
+    .then(data => {
+      console.log(data);
+      return promise3(); // 次に実行する非同期処理を指定
+    })
+    // 3つ目の非同期処理
+    .then(data => console.log(data));      */
+     
+    const url = 'https://qiita.com/api/v2/tags/javascript/items';
+    const btn3 = document.getElementById('btn3');
+    const list = document.getElementById('list');
+    
+    const createList = item => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      
+      a.href = item.url;
+      li.textContent = item.title;
+      
+      a.appendChild(li);
+      list.appendChild(a);
+    };
+    btn3.addEventListener('click', () => {
+      list.innerHTML = '';
+      
+      fetch(url)
+      .then(data => data.json()) // JSONデータとして取得する
+      .then(data => {
+        data.forEach(item => createList(item));
+      });
+    });
+     
+    </script>
+  </body>
+</html>
+
+
+
